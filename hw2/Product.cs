@@ -3,22 +3,7 @@
     public class Product
     {
         public string Name { get; set; }
-        private int _price;
-        public int Price
-        {
-            get
-            {
-                return _price;
-            }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException();
-                }
-                _price = value;
-            }
-        }
+        public int Price { get; protected set; }
         private int _weight;
         public int Weight
         {
@@ -45,6 +30,26 @@
             Name = name;
             Price = price;
             Weight = weight;
+        }
+
+        public void SetPrice(int price)
+        {
+            Price = price;
+        }
+
+        public void ChangePrice(int price)
+        {
+            if (price < 0)
+            {
+                throw new ArgumentException();
+            }
+            Price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("name: {0}\nprice: {1}$\nweight: {2}kg",
+                this.Name, this.Price, this.Weight);
         }
     }
 }

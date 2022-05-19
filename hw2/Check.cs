@@ -15,8 +15,7 @@
 
         public static void PrintProductInfo(Product product)
         {
-            Console.Write("name: {0}\nprice: {1}$\nweight: {2}kg",
-                product.Name, product.Price, product.Weight);
+            Console.WriteLine(product + "\n");
         }
     }
 }
