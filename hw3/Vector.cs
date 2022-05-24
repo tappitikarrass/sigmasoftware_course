@@ -2,7 +2,7 @@
 {
     class Vector
     {
-        int[] arr;
+        private int[] arr;
 
         public int this[int index]
         {
@@ -31,6 +31,47 @@
         public Vector(int n)
         {
             arr = new int[n];
+        }
+        
+        public List<int> FindLongestSubsequence()
+        {
+            var ans = new List<int>();
+
+            int buf = arr[0];
+            int end = 0;
+            int max_cnt = 1;
+            int cnt = 1;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (buf == arr[i])
+                {
+                    cnt++;
+
+                    if (cnt > max_cnt)
+                    {
+                        end = i;
+                        max_cnt = cnt;
+                    }
+                }
+                else
+                {
+                    buf = arr[i];
+                    cnt = 1;
+                }
+            }
+
+            for (int i = end; i > end - max_cnt; i--)
+            {
+                ans.Add(arr[i]);
+            }
+
+            return ans;
+        }
+
+        public void BuiltInReverse()
+        {
+            Array.Reverse(this.arr);
         }
 
         public void Reverse()
@@ -142,19 +183,29 @@
 
         public override string ToString()
         {
+            // array
             string str = String.Format("array[{0}]:\n", arr.Length);
             for (int i = 0; i < arr.Length; i++)
             {
                 str += arr[i] + " ";
             }
-
+            
+            // frequency
             str += "\n\nnum frequency:\n";
             foreach(var item in CalculateFreq())
             {
                 str += item.ToString() + "\n";
             }
-
+            
+            // palindrome
             str += String.Format("\nisPalindrom: {0}\n", CheckPalindrome());
+
+            // longest subsequence
+            str += "\nlongest subsequence:\n";
+            foreach(int item in FindLongestSubsequence())
+            {
+                str += String.Format("{0} ", item);
+            }
 
             return str;
         }

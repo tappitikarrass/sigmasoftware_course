@@ -5,8 +5,8 @@
         static void Main(string[] args)
         {
             // 0. Random
-            Vector arr = new Vector(5);
-            arr.RandomInitialization(1, 9);
+            // Vector arr = new Vector(5);
+            // arr.RandomInitialization(1, 9);
             // arr.RandomInitialization();
             
             // 1. Palindrome
@@ -20,6 +20,13 @@
             // Console.WriteLine(arr);
             // arr.Reverse();
             // Console.WriteLine(arr);
+            // arr.BuiltInReverse();
+            // arr.BuiltInReverse();
+            // Console.WriteLine(arr);
+
+            // 3. Longest subsequence of the same number
+            Vector arr = new Vector(1, 1, 2, 3, 3, 5, 5, 5);
+            Console.WriteLine(arr);
         }
     }
 }
