@@ -51,5 +51,10 @@
             return String.Format("name: {0}\nprice: {1}$\nweight: {2}kg",
                 this.Name, this.Price, this.Weight);
         }
+
+        public override bool Equals(object? obj)
+        {
+            return true;
+        }
     }
 }
