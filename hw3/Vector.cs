@@ -33,6 +33,17 @@
             arr = new int[n];
         }
 
+        public void Reverse()
+        {
+            int buf;
+            for(int i = 0; i < arr.Length / 2; i++)
+            {
+                buf = arr[i];
+                arr[i] = arr[arr.Length - i - 1];
+                arr[arr.Length - i - 1] = buf;
+            }
+        }
+
         public bool CheckPalindrome()
         {
             bool isPalindrome = true;
