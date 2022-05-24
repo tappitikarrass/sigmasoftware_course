@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw1", "hw1\hw1.csproj", "{E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw2", "hw2\hw2.csproj", "{EDFCCEE1-6232-4140-93EF-AC15E42FCD98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw2p2", "hw2p2\hw2p2.csproj", "{7D0EB3C1-A3FC-40D9-A735-26D4D0772728}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw2matrix", "hw2matrix\hw2matrix.csproj", "{7D0EB3C1-A3FC-40D9-A735-26D4D0772728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
