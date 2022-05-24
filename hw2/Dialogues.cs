@@ -2,22 +2,21 @@
 {
     public interface IDialogue
     {
-        public static Product Show()
-        { 
-            return null;
-        }
+        public static Product Show() => throw new NotImplementedException();
     }
 
     public class AddProductDialogue : IDialogue
     {
         public static Product Show()
         {
+            int price, weight;
+
             Console.Write("enter name: ");
-            string name = Console.ReadLine();
+            string name = "" + Console.ReadLine();
             Console.Write("enter price: ");
-            int price = Convert.ToInt32(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out price));
             Console.Write("enter weight: ");
-            int weight = Convert.ToInt32(Console.ReadLine());
+            while (!int.TryParse(Console.ReadLine(), out weight));
 
             return new Product(name, price, weight);
         }

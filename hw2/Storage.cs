@@ -2,21 +2,29 @@
 {
     public class Storage
     {
-        public List<Product> ProductsList { get; private set; }
+        private List<Product> _products;
         public Storage(params Product[] products)
         {
-            ProductsList = new List<Product>();
-            foreach(var product in products)
-            {
-                ProductsList.Add(product);
-            }
+            _products = products == null ? new List<Product>() : new List<Product>(products);
         }
 
-        public Product this[int i]
+        public Product this[int index]
         {
             get
             {
-                return ProductsList[i];
+                if (index < 0 && index > _products.Count)
+                {
+                    return _products[index];
+                }
+                throw new ArgumentOutOfRangeException();
+            }
+            set
+            {
+                if (index < 0 && index > _products.Count)
+                {
+                    _products[index] = value;
+                }
+                throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -65,7 +73,7 @@
                     Console.WriteLine("[E] Invalid percentage value!");
                     continue;
                 }
-                foreach(var product in ProductsList)
+                foreach(var product in _products)
                 {
                     product.SetPrice((int)(product.Price * (percentage / 100d)));
                 }
@@ -75,7 +83,7 @@
 
         private void PrintProductsInfo()
         {
-            foreach(var product in ProductsList)
+            foreach(var product in _products)
             {
                 Console.WriteLine(product + "\n");
             }
@@ -96,15 +104,15 @@
                 switch (option)
                 {
                     case 1:
-                        ProductsList.Add(AddProductDialogue.Show());
+                        _products.Add(AddProductDialogue.Show());
                         isRunning = false;
                         break;
                     case 2:
-                        ProductsList.Add(AddDiaryProductsDialogue.Show());
+                        _products.Add(AddDiaryProductsDialogue.Show());
                         isRunning = false;
                         break;
                     case 3:
-                        ProductsList.Add(AddMeatDialogue.Show());
+                        _products.Add(AddMeatDialogue.Show());
                         isRunning = false;
                         break;
                     default:
@@ -116,12 +124,12 @@
 
         private void PrintAllMeatProducts()
         {
-            for (int i = 0; i < ProductsList.Count; i++)
+            for (int i = 0; i < _products.Count; i++)
             {
-                if (ProductsList[i].GetType() == typeof(Meat))
+                if (_products[i].GetType() == typeof(Meat))
                 {
                     Console.WriteLine("\n--- {0}", i + 1);
-                    Console.WriteLine(ProductsList[i]);
+                    Console.WriteLine(_products[i]);
                 }
             }
         }
@@ -130,27 +138,27 @@
         {                
             while(true)
             {
-                if (ProductsList.Count == 0)
+                if (_products.Count == 0)
                 {
                     Console.WriteLine("[E] Products list is already empty!");
                     break;
                 }
                 // print products menu
                 Console.WriteLine("select product:");
-                for (int i = 0; i < ProductsList.Count; i++)
+                for (int i = 0; i < _products.Count; i++)
                 {
                     Console.WriteLine("\n--- {0}" +
-                        "\n{1}", i + 1, ProductsList[i]);
+                        "\n{1}", i + 1, _products[i]);
                 }
                 Console.Write("\n-> ");
                 // read & process value
                 int option = Convert.ToInt32(Console.ReadLine());
-                if (option > ProductsList.Count || option <= 0)
+                if (option > _products.Count || option <= 0)
                 {
                     Console.WriteLine("[E] No such product!");
                     continue;
                 }
-                ProductsList.RemoveAt(option - 1);
+                _products.RemoveAt(option - 1);
                 break;
             }
         }
