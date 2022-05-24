@@ -1,4 +1,4 @@
-﻿namespace hw2p2
+﻿namespace hw2task2
 {
     public class Program
     {

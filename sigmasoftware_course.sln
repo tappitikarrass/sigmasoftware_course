@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw1", "hw1\hw1.csproj", "{E96FAD43-51A3-48E1-85F2-FE0323E952FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw2", "hw2\hw2.csproj", "{EDFCCEE1-6232-4140-93EF-AC15E42FCD98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw2task1", "hw2\hw2task1\hw2task1.csproj", "{EDFCCEE1-6232-4140-93EF-AC15E42FCD98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw2matrix", "hw2matrix\hw2matrix.csproj", "{7D0EB3C1-A3FC-40D9-A735-26D4D0772728}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw2task2", "hw2\hw2task2\hw2task2.csproj", "{7D0EB3C1-A3FC-40D9-A735-26D4D0772728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw3", "hw3\hw3.csproj", "{EFBB9A85-F8E5-4E81-BC30-FB29D7D69835}"
 EndProject
