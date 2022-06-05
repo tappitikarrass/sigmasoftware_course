@@ -7,8 +7,8 @@
         public int this[int index]
         {
             get
-            { 
-                if(index >= 0 && index < arr.Length)
+            {
+                if (index >= 0 && index < arr.Length)
                 {
                     return arr[index];
                 }
@@ -17,7 +17,7 @@
                     throw new IndexOutOfRangeException();
                 }
             }
-            set 
+            set
             {
                 arr[index] = value;
             }
@@ -32,7 +32,7 @@
         {
             arr = new int[n];
         }
-        
+
         public List<int> FindLongestSubsequence()
         {
             var ans = new List<int>();
@@ -76,12 +76,9 @@
 
         public void Reverse()
         {
-            int buf;
-            for(int i = 0; i < arr.Length / 2; i++)
+            for (int i = 0; i < arr.Length / 2; i++)
             {
-                buf = arr[i];
-                arr[i] = arr[arr.Length - i - 1];
-                arr[arr.Length - i - 1] = buf;
+                (arr[i], arr[arr.Length - i - 1]) = (arr[arr.Length - i - 1], arr[i]);
             }
         }
 
@@ -93,6 +90,7 @@
                 if (arr[i] != arr[arr.Length - i - 1])
                 {
                     isPalindrome = false;
+                    break;
                 }
             }
             return isPalindrome;
@@ -116,11 +114,11 @@
 
             for (int i = 0; i < arr.Length; i++)
             {
-                while(arr[i] == 0)
+                while (arr[i] == 0)
                 {
                     num = random.Next(1, arr.Length + 1);
                     isExist = false;
-                    
+
                     for (int j = 0; j < i; j++)
                     {
                         if (num == arr[j])
@@ -141,12 +139,12 @@
 
         public Pair[] CalculateFreq()
         {
-            
+
             Pair[] pairs = new Pair[arr.Length];
 
             for (int i = 0; i < arr.Length; i++)
             {
-                pairs[i] = new Pair(0,0);
+                pairs[i] = new Pair(0, 0);
 
             }
 
@@ -157,7 +155,7 @@
                 bool isElement = false;
                 for (int j = 0; j < countDifference; j++)
                 {
-                    if(arr[i] == pairs[j].Number)
+                    if (arr[i] == pairs[j].Number)
                     {
                         pairs[j].Freq++;
                         isElement = true;
@@ -189,20 +187,20 @@
             {
                 str += arr[i] + " ";
             }
-            
+
             // frequency
             str += "\n\nnum frequency:\n";
-            foreach(var item in CalculateFreq())
+            foreach (var item in CalculateFreq())
             {
                 str += item.ToString() + "\n";
             }
-            
+
             // palindrome
             str += String.Format("\nisPalindrom: {0}\n", CheckPalindrome());
 
             // longest subsequence
             str += "\nlongest subsequence:\n";
-            foreach(int item in FindLongestSubsequence())
+            foreach (int item in FindLongestSubsequence())
             {
                 str += String.Format("{0} ", item);
             }
