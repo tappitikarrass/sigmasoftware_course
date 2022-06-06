@@ -167,6 +167,7 @@
 
         public static int TimePassedFromLastMeterReading()
         {
+            // TODO: Improve stupid DateOnly to DateTime and backwards convertation
             DateOnly currentDate = DateOnly.FromDateTime(DateTime.Now);
             int maxDifference = 0;
             foreach(var apartment in _apartments)
