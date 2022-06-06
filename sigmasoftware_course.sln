@@ -11,11 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw2task2", "hw2\hw2task2\hw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw3", "hw3\hw3.csproj", "{EFBB9A85-F8E5-4E81-BC30-FB29D7D69835}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw4", "hw4\hw4.csproj", "{A6BF9603-8791-417F-8EC8-20E171D8FB23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw4", "hw4\hw4.csproj", "{A6BF9603-8791-417F-8EC8-20E171D8FB23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw5", "hw5\hw5.csproj", "{52844057-7ED7-456C-ABB4-10B847D84163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw5", "hw5\hw5.csproj", "{52844057-7ED7-456C-ABB4-10B847D84163}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw6task1", "hw6task1\hw6task1.csproj", "{9F50C060-9102-42EA-ACC8-78E3F8C5B001}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hw6task1", "hw6task1\hw6task1.csproj", "{9F50C060-9102-42EA-ACC8-78E3F8C5B001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hw6task2", "hw6task2\hw6task2.csproj", "{C6D299D8-DBCF-42CD-8AE1-7F0D8D4158CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{9F50C060-9102-42EA-ACC8-78E3F8C5B001}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F50C060-9102-42EA-ACC8-78E3F8C5B001}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F50C060-9102-42EA-ACC8-78E3F8C5B001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D299D8-DBCF-42CD-8AE1-7F0D8D4158CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D299D8-DBCF-42CD-8AE1-7F0D8D4158CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D299D8-DBCF-42CD-8AE1-7F0D8D4158CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D299D8-DBCF-42CD-8AE1-7F0D8D4158CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
