@@ -188,5 +188,56 @@
             }
             return maxDifference;
         }
+
+        public static string PrepareFileOutput()
+        {
+            Enum[] months = new Enum[3];
+
+            switch (AccountingService.Quarter)
+            {
+                case Quarter.Q1:
+                    months[0] = Q1.January;
+                    months[1] = Q1.February;
+                    months[2] = Q1.March;
+                    break;
+                case Quarter.Q2:
+                    months[0] = Q2.April;
+                    months[1] = Q2.May;
+                    months[2] = Q2.June;
+                    break;
+                case Quarter.Q3:
+                    months[0] = Q3.July;
+                    months[1] = Q3.August;
+                    months[2] = Q3.September;
+                    break;
+                case Quarter.Q4:
+                    months[0] = Q4.October;
+                    months[1] = Q4.November;
+                    months[2] = Q4.December;
+                    break;
+                default:
+                    throw new ArgumentException();
+            }
+
+            string result = "";
+
+            result += Utils.MakeSeparator(58, 0, 6, 17, 27, 38, 46, 57);
+            result += $"\n| Num | Name{' ',4} | {months[0], 6} | {months[1]} | {months[2]} | Expenses |\n";
+            result += Utils.MakeSeparator(58, 0, 6, 17, 27, 38, 46, 57);
+
+
+            foreach (var apartment in _apartments)
+            {
+                apartment.SetToString(new ApartmentToStringFileOutput());
+                result += apartment.ToString();
+                apartment.SetToString(new ApartmentToStringDefault());
+            }
+
+            result += "\n";
+            result += Utils.MakeSeparator(58, 0, 4, 17, 27, 38, 46, 57);
+
+            return result;
+        }
+
     }
 }
