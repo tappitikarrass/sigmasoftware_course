@@ -5,16 +5,16 @@
         private IApartmentToString _strategy;
         public int Number { get; }
         public string Owner { get; }
-        public DateOnly[] meterReadingDates { get; }
-        public KeyValuePair<int, int>[] readingsPairs { get; }
+        public DateOnly[] MeterReadingDates { get; }
+        public KeyValuePair<int, int>[] ReadingsPairs { get; }
 
         public Apartment()
         {
             _strategy = new ApartmentToStringDefault();
             Number = 0;
             Owner = "";
-            meterReadingDates = new DateOnly[1];
-            readingsPairs = new KeyValuePair<int, int>[1];
+            MeterReadingDates = new DateOnly[1];
+            ReadingsPairs = new KeyValuePair<int, int>[1];
         }
 
         public Apartment(IApartmentToString strategy) : this()
@@ -33,8 +33,8 @@
             }
             this.Number = Number;
             this.Owner = Owner;
-            this.meterReadingDates = meterReadingDates;
-            this.readingsPairs = readingsPairs;
+            this.MeterReadingDates = meterReadingDates;
+            this.ReadingsPairs = readingsPairs;
         }
 
         public Apartment(string apartmentString) : this()
@@ -71,8 +71,8 @@
                 Console.WriteLine("Incorrect apartment number set!");
                 System.Environment.Exit(1);
             }
-            meterReadingDates = dates;
-            readingsPairs = readings;
+            MeterReadingDates = dates;
+            ReadingsPairs = readings;
         }
 
         public void SetToString(IApartmentToString strategy)
@@ -84,7 +84,7 @@
         {
             double debt = 0;
 
-            foreach(var reading in readingsPairs)
+            foreach(var reading in ReadingsPairs)
             {
                 debt += reading.Value - reading.Key;
             }

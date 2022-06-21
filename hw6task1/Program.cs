@@ -12,7 +12,7 @@ namespace hw6task1
     {
         public static void Main(string[] args)
         {
-            var Service = AccountingService.GetInstance();
+            _ = AccountingService.GetInstance();
 
             const string filePath = @"..\..\..\input.txt";
             AccountingService.LoadFlatsFromFile(filePath);

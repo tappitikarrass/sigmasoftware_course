@@ -172,7 +172,7 @@
             int maxDifference = 0;
             foreach(var apartment in _apartments)
             {
-                foreach(var date in apartment.meterReadingDates)
+                foreach(var date in apartment.MeterReadingDates)
                 {
                     DateTime temp = new DateTime(date.Year, date.Month, date.Day);
                     DateTime tempCurrentDate = new DateTime(currentDate.Year,

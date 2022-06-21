@@ -9,15 +9,15 @@
     {
         public string ToString(Apartment apartment)
         {
-            var Number = apartment.Number;
-            var Owner = apartment.Owner;
-            var meterReadingDates = apartment.meterReadingDates;
-            var readingsPairs = apartment.readingsPairs;
+            var number = apartment.Number;
+            var owner = apartment.Owner;
+            var meterReadingDates = apartment.MeterReadingDates;
+            var readingsPairs = apartment.ReadingsPairs;
 
             return $"" +
-                $"| {Number,2} | {Owner,8} | {meterReadingDates[0],10} | {readingsPairs[0].Key, 6}  | {readingsPairs[0].Value, 6} |\n" +
-                $"| {Number,2} | {Owner,8} | {meterReadingDates[1],10} | {readingsPairs[1].Key, 6}  | {readingsPairs[1].Value, 6} |\n" +
-                $"| {Number,2} | {Owner,8} | {meterReadingDates[2],10} | {readingsPairs[2].Key, 6}  | {readingsPairs[2].Value, 6} |";
+                $"| {number,2} | {owner,8} | {meterReadingDates[0],10} | {readingsPairs[0].Key, 6}  | {readingsPairs[0].Value, 6} |\n" +
+                $"| {number,2} | {owner,8} | {meterReadingDates[1],10} | {readingsPairs[1].Key, 6}  | {readingsPairs[1].Value, 6} |\n" +
+                $"| {number,2} | {owner,8} | {meterReadingDates[2],10} | {readingsPairs[2].Key, 6}  | {readingsPairs[2].Value, 6} |";
         }
     }
 
@@ -25,10 +25,10 @@
     {
         public string ToString(Apartment apartment)
         {
-            var Number = apartment.Number;
-            var Owner = apartment.Owner;
-            var Expenses = AccountingService.kwPrice * apartment.getDebt();
-            return $"| {Number,2} | {Owner,6}  | {Expenses,5:N2}   \t|";
+            var number = apartment.Number;
+            var owner = apartment.Owner;
+            var expenses = AccountingService.kwPrice * apartment.getDebt();
+            return $"| {number,2} | {owner,6}  | {expenses,5:N2}   \t|";
         }
     }
 
@@ -37,9 +37,9 @@
         public string ToString(Apartment apartment)
         {
             double expenses = apartment.getDebt() * AccountingService.kwPrice;
-            double month1debt = apartment.readingsPairs[0].Value - apartment.readingsPairs[0].Key;
-            double month2debt = apartment.readingsPairs[1].Value - apartment.readingsPairs[1].Key;
-            double month3debt = apartment.readingsPairs[2].Value - apartment.readingsPairs[2].Key;
+            double month1debt = apartment.ReadingsPairs[0].Value - apartment.ReadingsPairs[0].Key;
+            double month2debt = apartment.ReadingsPairs[1].Value - apartment.ReadingsPairs[1].Key;
+            double month3debt = apartment.ReadingsPairs[2].Value - apartment.ReadingsPairs[2].Key;
 
             return $"\n| {apartment.Number, 3} | {apartment.Owner,6}\t " +
                 $"| {month1debt,7} | {month2debt,8} | {month3debt,5} | {expenses, 8:N2} |";
